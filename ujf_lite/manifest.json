@@ -2,7 +2,7 @@
     "format_version": 2,
     "header": {
         "name": "Universal Java Font",
-        "description": "By KabanFriends | UJF Lite",
+        "description": "By KabanFriends | UJF Lite | v1.0.0",
         "uuid": "ef46d100-0bcc-4218-87c9-7b126b4aa319",
         "version": [0, 1, 0],
         "min_engine_version": [1, 15, 0]
