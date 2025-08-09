@@ -468,6 +468,10 @@ def merge_page(page: int, png_path: str, json_path: str,
                 # else: no override -> leave Unifont glyph as-is
             # else: uchar is null and no fallback -> leave tile empty
 
+    if page_hex == "E0" or page_hex == "E1":
+        if verbose:
+            print(f"Skipping page {page_hex} (emoticons)")
+        return
     out_path = os.path.join(out_dir, f"glyph_{page_hex}.png")
     os.makedirs(out_dir, exist_ok=True)
     write_png(out_im, out_path)
