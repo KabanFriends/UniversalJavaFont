@@ -11,6 +11,7 @@ python3 conv_unifont.py \
 
 python3 merge_glyph.py \
     --config merge_config/$PIXEL_VARIANT.json \
+    --overrides unifont_width_overrides.json \
     --unicode-dir pixel/$UNICODE_DIR \
     --out-dir ../$PACK_NAME/subpacks/ujf/font
 
