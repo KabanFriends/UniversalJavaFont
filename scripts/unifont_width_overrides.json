@@ -1,0 +1,82 @@
+{
+    "overrides": [
+        {
+            "__ranges": [
+                "CJK Symbols and Punctuation",
+                "Hiragana",
+                "Katakana"
+            ],
+            "from": "\u3001",
+            "to": "\u30FF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Enclosed CJK Letters and Months",
+                "CJK Compatibility",
+                "CJK Unified Ideographs Extension A",
+                "Yijing Hexagram Symbols",
+                "CJK Unified Ideographs"
+            ],
+            "from": "\u3200",
+            "to": "\u9FFF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Hangul Jamo"
+            ],
+            "from": "\u1100",
+            "to": "\u11FF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Hangul Compatibility Jamo"
+            ],
+            "from": "\u3130",
+            "to": "\u318F",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Hangul Jamo Extended-A"
+            ],
+            "from": "\uA960",
+            "to": "\uA97F",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Hangul Jamo Extended-B"
+            ],
+            "from": "\uD7B0",
+            "to": "\uD7FF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Hangul Syllables"
+            ],
+            "from": "\uAC00",
+            "to": "\uD7AF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "CJK Compatibility Ideographs"
+            ],
+            "from": "\uF900",
+            "to": "\uFAFF",
+            "width": 16
+        },
+        {
+            "__ranges": [
+                "Halfwidth and Fullwidth Forms"
+            ],
+            "from": "\uFF01",
+            "to": "\uFF5E",
+            "width": 16
+        }
+    ]
+}
