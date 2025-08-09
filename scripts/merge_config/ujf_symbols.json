@@ -1,0 +1,16 @@
+{
+    "fonts": [
+        {
+            "name": "ascii",
+            "translate": [0, 0]
+        },
+        {
+            "name": "accented_symbols",
+            "translate": [0, -3]
+        },
+        {
+            "name": "nonlatin_european_symbols",
+            "translate": [0, 0]
+        }
+    ]
+}

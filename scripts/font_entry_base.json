@@ -1,0 +1,6 @@
+{
+    "type": "pixel",
+    "scale": 0.75,
+    "padding": 0.5,
+    "additionalArgs": "-translate 0 5.2"
+}

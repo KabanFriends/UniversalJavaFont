@@ -1,0 +1,70 @@
+{
+    "showGlyphInfo": false,
+    "threads": 32,
+    "range": {
+        "from": "00",
+        "to": "FF"
+    },
+    "fonts": [
+        {
+            "type": "pixel",
+            "name": "ascii",
+            "scale": 0.75,
+            "spaceWidth": 2,
+            "additionalArgs": "-translate 0 2.6"
+        },
+        {
+            "type": "pixel",
+            "name": "accented_symbols",
+            "scale": 0.84375,
+            "additionalArgs": "-translate 0 1.6"
+        },
+        {
+            "type": "pixel",
+            "name": "nonlatin_european_symbols",
+            "scale": 0.75,
+            "additionalArgs": "-translate 0 2.6"
+        }
+    ],
+    "pageRemapping": [
+        { "from": "05", "to": "AC" },
+        { "from": "06", "to": "AD" },
+        { "from": "07", "to": "AE" },
+        { "from": "08", "to": "AF" },
+        { "from": "09", "to": "B0" },
+        { "from": "0A", "to": "B1" },
+        { "from": "0B", "to": "B2" },
+        { "from": "0C", "to": "B3" },
+        { "from": "0D", "to": "B4" },
+        { "from": "0E", "to": "B5" },
+        { "from": "0F", "to": "B6" },
+        { "from": "10", "to": "B7" },
+        { "from": "11", "to": "B8" },
+        { "from": "12", "to": "B9" },
+        { "from": "13", "to": "BA" },
+        { "from": "14", "to": "BB" },
+        { "from": "15", "to": "BC" },
+        { "from": "16", "to": "BD" },
+        { "from": "17", "to": "BE" },
+        { "from": "18", "to": "BF" },
+        { "from": "19", "to": "C0" },
+        { "from": "1A", "to": "C1" },
+        { "from": "1B", "to": "C2" },
+        { "from": "1C", "to": "C3" },
+        { "from": "1D", "to": "C4" },
+        { "from": "1E", "to": "C5" },
+        { "from": "1F", "to": "C6" },
+        { "from": "22", "to": "C7" },
+        { "from": "23", "to": "C8" },
+        { "from": "24", "to": "C9" },
+        { "from": "25", "to": "CA" },
+        { "from": "26", "to": "CB" },
+        { "from": "27", "to": "CC" },
+        { "from": "28", "to": "CD" },
+        { "from": "29", "to": "CE" },
+        { "from": "2A", "to": "CF" },
+        { "from": "2B", "to": "D0" },
+        { "from": "2C", "to": "D1" },
+        { "from": "2D", "to": "D2" }
+    ]
+}

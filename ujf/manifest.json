@@ -1,0 +1,25 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Universal Java Font",
+        "description": "By KabanFriends | UJF Full",
+        "uuid": "0ae34216-805a-4148-8457-b8a0d7455e0a",
+        "version": [0, 1, 0],
+        "min_engine_version": [1, 15, 0]
+    },
+    "modules": [
+        {
+            "description": "Universal Java Font Module",
+            "type": "resources",
+            "uuid": "74b2342f-75db-4cfd-8375-556ee13eb6a8",
+            "version": [0, 1, 0]
+        }
+    ],
+    "subpacks": [
+		{
+			"folder_name": "ujf",
+			"name": "Universal Java Font Main Pack",
+			"memory_tier": 1
+		}
+	]
+}

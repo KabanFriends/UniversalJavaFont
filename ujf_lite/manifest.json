@@ -1,0 +1,25 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Universal Java Font",
+        "description": "By KabanFriends | UJF Lite",
+        "uuid": "ef46d100-0bcc-4218-87c9-7b126b4aa319",
+        "version": [0, 1, 0],
+        "min_engine_version": [1, 15, 0]
+    },
+    "modules": [
+        {
+            "description": "Universal Java Font Module",
+            "type": "resources",
+            "uuid": "dcb9c19e-1e4e-4204-b25d-a21c85e336e5",
+            "version": [0, 1, 0]
+        }
+    ],
+    "subpacks": [
+		{
+			"folder_name": "ujf",
+			"name": "Universal Java Font Main Pack",
+			"memory_tier": 1
+		}
+	]
+}

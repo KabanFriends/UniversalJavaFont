@@ -1,0 +1,32 @@
+# Generated files
+scripts/config/
+scripts/font_entries/
+scripts/pixel/unicode/
+scripts/pixel/unicode_jp/
+scripts/msdfgen/out/
+scripts/config.json
+
+# Minecraft assets
+scripts/texture_sources/*.png
+scripts/default/default8.png
+scripts/unifont_hex/*.hex
+scripts/pixel/ascii.png
+scripts/pixel/accented.png
+scripts/pixel/accented_symbols.png
+scripts/pixel/nonlatin_european.png
+scripts/pixel/nonlatin_european_symbols.png
+
+# External binaries
+scripts/*.jar
+scripts/msdfgen/msdfgen
+scripts/msdfgen/msdfgen.exe
+
+# Resource pack fonts
+ujf/subpacks/ujf/font/
+ujf_jp/subpacks/ujf/font/
+ujf_lite/subpacks/ujf/font/
+ujf_lite_jp/subpacks/ujf/font/
+ujf_symbols/subpacks/ujf/font/
+ujf_symbols_jp/subpacks/ujf/font/
+ujf_symbols_lite/subpacks/ujf/font/
+ujf_symbols_lite_jp/subpacks/ujf/font/
