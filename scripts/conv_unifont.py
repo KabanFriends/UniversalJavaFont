@@ -38,7 +38,14 @@ def parse_unifont_list(path: str) -> List[str]:
 
 
 def find_hex_path(hex_dir: str, name: str) -> Optional[str]:
-    # Accept names with or without ".hex"
+    """
+    Find the .hex file for a font name.
+
+    Accepts an exact file name (with or without ".hex"), or a name without a
+    version such as "unifont_all_no_pua", which matches the versioned file
+    Minecraft ships ("unifont_all_no_pua-17.0.01.hex"). If several versions
+    are present, the highest one is used.
+    """
     candidates = []
     if name.lower().endswith(".hex"):
         candidates.append(os.path.join(hex_dir, name))
@@ -48,6 +55,17 @@ def find_hex_path(hex_dir: str, name: str) -> Optional[str]:
     for c in candidates:
         if os.path.isfile(c):
             return c
+
+    base = name[:-4] if name.lower().endswith(".hex") else name
+    version_re = re.compile(re.escape(base) + r"-([0-9]+(?:\.[0-9]+)*)\.hex$", re.I)
+    versions = []
+    if os.path.isdir(hex_dir):
+        for fname in os.listdir(hex_dir):
+            m = version_re.match(fname)
+            if m:
+                versions.append((tuple(int(x) for x in m.group(1).split(".")), fname))
+    if versions:
+        return os.path.join(hex_dir, max(versions)[1])
     return None
 
 
@@ -62,9 +80,10 @@ def load_hex_fonts(font_names: Iterable[str], hex_dir: str) -> Dict[int, str]:
     for fname in font_names:
         path = find_hex_path(hex_dir, fname)
         if not path:
-            print(f"Warning: .hex file for '{fname}' not found in {hex_dir}", 
-                  file=sys.stderr)
-            continue
+            # Without the font every page comes out empty, which shows up as
+            # fallback squares in both the pixel and the smooth font.
+            raise FileNotFoundError(f".hex file for '{fname}' not found in {hex_dir}")
+        print(f"Using {os.path.basename(path)} for '{fname}'")
         with open(path, "r", encoding="utf-8", errors="replace") as fh:
             for lineno, line in enumerate(fh, start=1):
                 line = line.strip()
@@ -237,7 +256,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         print(f"Error reading {args.list_file}: {e}", file=sys.stderr)
         return 2
 
-    mapping = load_hex_fonts(font_names, args.hex_dir)
+    try:
+        mapping = load_hex_fonts(font_names, args.hex_dir)
+    except FileNotFoundError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
     print(f"Loaded {len(mapping)} glyphs from {args.hex_dir} (precedence order).")
 
     # determine pages
