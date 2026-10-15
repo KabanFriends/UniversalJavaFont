@@ -38,6 +38,15 @@ cp default8_improved.png ../$PACK_NAME/font/default8.png
     --smooth font_entries/$PACK_NAME.json \
     --out config/$PACK_NAME.json
 
+# Share identical glyphs and move characters from pages the client never
+# loads into the freed texture cells (writes cellMapping into the config)
+"$PYTHON" make_cell_mapping.py \
+    --config config/$PACK_NAME.json \
+    --priority symbol_chars.json \
+    --fill-rest \
+    --out config/${PACK_NAME}_cells.json \
+    --report config/${PACK_NAME}_cells_report.json
+
 cp config/$PACK_NAME.json config.json
 java -Djava.awt.headless=true -Xms1G -Xmx1G -jar BESmoothFontGen.jar
 rm -rf ../$PACK_NAME/font/smooth/
