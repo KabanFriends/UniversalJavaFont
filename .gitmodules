@@ -1,0 +1,6 @@
+[submodule "BESmoothFontGen"]
+	path = BESmoothFontGen
+	url = https://github.com/KabanFriends/BESmoothFontGen.git
+[submodule "msdfgen"]
+	path = msdfgen
+	url = https://github.com/Chlumsky/msdfgen.git

@@ -14,12 +14,5 @@
             "uuid": "d5101bac-b031-4b86-b031-04f4b5f5b8b3",
             "version": [0, 1, 0]
         }
-    ],
-    "subpacks": [
-		{
-			"folder_name": "ujf",
-			"name": "Universal Java Font Main Pack",
-			"memory_tier": 1
-		}
-	]
+    ]
 }

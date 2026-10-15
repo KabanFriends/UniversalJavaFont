@@ -1,6 +1,7 @@
 # Generated files
 scripts/config/
 scripts/font_entries/
+scripts/smooth/
 scripts/pixel/unicode/
 scripts/pixel/unicode_jp/
 scripts/msdfgen/out/
@@ -22,11 +23,18 @@ scripts/msdfgen/msdfgen
 scripts/msdfgen/msdfgen.exe
 
 # Resource pack fonts
-ujf/subpacks/ujf/font/
-ujf_jp/subpacks/ujf/font/
-ujf_lite/subpacks/ujf/font/
-ujf_lite_jp/subpacks/ujf/font/
-ujf_symbols/subpacks/ujf/font/
-ujf_symbols_jp/subpacks/ujf/font/
-ujf_symbols_lite/subpacks/ujf/font/
-ujf_symbols_lite_jp/subpacks/ujf/font/
+ujf/font/
+ujf_jp/font/
+ujf_lite/font/
+ujf_lite_jp/font/
+ujf_symbols/font/
+ujf_symbols_jp/font/
+ujf_symbols_lite/font/
+ujf_symbols_lite_jp/font/
+
+# Python virtual environment
+.venv/
+
+# Build output
+.build/
+dist/

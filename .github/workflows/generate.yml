@@ -1,0 +1,54 @@
+name: Generate packs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake libfreetype-dev libpng-dev python3-venv zip
+
+      - name: Set up Python virtual environment
+        run: ./setup_venv.sh
+
+      - name: Download assets
+        run: ./download_assets.sh
+
+      - name: Build BESmoothFontGen
+        run: ./install_fontgen.sh
+
+      - name: Build msdfgen
+        run: ./install_msdfgen.sh
+
+      - name: Generate packs
+        run: ./build.sh
+
+      - name: Package packs
+        run: |
+          mkdir dist
+          for pack in ujf*/; do
+            pack="${pack%/}"
+            (cd "$pack" && zip -r "../dist/$pack.mcpack" .)
+          done
+
+      - name: Upload packs
+        uses: actions/upload-artifact@v4
+        with:
+          name: packs
+          path: dist/*.mcpack
+          if-no-files-found: error
