@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ./generate_ujf.sh
 ./generate_ujf_jp.sh

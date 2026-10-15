@@ -1,24 +1,29 @@
 #!/bin/bash
+set -e
+PYTHON="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )/.venv/bin/python3"
+
+./check_deps.sh
+
 export UNICODE_VARIANT="ujf_jp"
 export UNICODE_DIR="unicode_jp"
 export PIXEL_VARIANT="ujf"
 export PACK_NAME="ujf_lite_jp"
 
-python3 conv_unifont.py \
+"$PYTHON" conv_unifont.py \
     --list-file unifont_list/$UNICODE_VARIANT.json \
     --hex-dir unifont_hex \
     --out-dir pixel/$UNICODE_DIR
 
-python3 merge_glyph.py \
+"$PYTHON" merge_glyph.py \
     --config merge_config/$PIXEL_VARIANT.json \
     --overrides unifont_width_overrides.json \
     --unicode-dir pixel/$UNICODE_DIR \
-    --out-dir ../$PACK_NAME/subpacks/ujf/font \
+    --out-dir ../$PACK_NAME/font \
     --verbose
 
 : '
-python3 merge_default8.py \
+"$PYTHON" merge_default8.py \
     --config merge_config/$PIXEL_VARIANT.json \
-    --out ../$PACK_NAME/subpacks/ujf/font/default8.png
+    --out ../$PACK_NAME/font/default8.png
 '
-cp default8_improved.png ../$PACK_NAME/subpacks/ujf/font/default8.png
+cp default8_improved.png ../$PACK_NAME/font/default8.png
